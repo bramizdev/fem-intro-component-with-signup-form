@@ -1,7 +1,9 @@
 /* ----- Custom properties ----- */
 :root {
   --clr-primary-500: hsl(0, 100%, 74%);
+
   --clr-primary-600: hsl(154, 59%, 51%);
+  --clr-primary-650: hsl(154, 59%, 65%);
 
   --clr-accent-500: hsl(248, 32%, 49%);
 
@@ -19,6 +21,14 @@
   --fs-400: 0.875rem;
   --fs-500: 1rem;
   --fs-900: 1.7rem;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --fs-400: 0.875rem;
+    --fs-500: 1rem;
+    --fs-900: 3.0625rem;
+  }
 }
 
 /* ----- Josh Comeau CSS Reset ----- */
@@ -119,10 +129,30 @@ body {
   background-image: url('../images/bg-intro-mobile.png');
 }
 
+@media (min-width: 48rem) {
+  body {
+    padding: 1rem;
+    background-image: url('../images/bg-intro-desktop.png');
+  }
+}
+
 footer {
   color: var(--clr-neutral-100);
   width: 100%;
   text-align: center;
+}
+
+@media (min-width: 48rem) {
+  main {
+    margin: 0 auto;
+    height: 100vh;
+    max-width: 69.375rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 1.65rem;
+  }
 }
 
 footer a {
@@ -138,16 +168,35 @@ footer a {
   text-align: center;
 }
 
+@media (min-width: 48rem) {
+  .intro {
+    padding: 0;
+    text-align: left;
+  }
+}
+
 .intro__heading {
-  padding-top: 3.6rem;
-  padding-bottom: 1.25rem;
   font-size: var(--fs-900);
   line-height: 1.4;
+}
+
+@media (min-width: 48rem) {
+  .intro__heading {
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* ----- Form ----- */
 .form {
   padding: 2rem 1.5625rem;
+}
+
+@media (min-width: 48rem) {
+  .form {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 .form__banner {
@@ -157,6 +206,13 @@ footer a {
   color: var(--clr-neutral-100);
   background-color: var(--clr-accent-500);
   border-radius: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+  .form__banner {
+    padding: 1.075rem 3.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .form__banner-description {
@@ -175,6 +231,13 @@ footer a {
   gap: 1rem;
 }
 
+@media (min-width: 48rem) {
+  .form__form {
+    gap: 1.25rem;
+    padding: 40px;
+  }
+}
+
 .form__input {
   width: 100%;
   border: 1px solid var(--clr-neutral-500);
@@ -189,7 +252,11 @@ footer a {
 }
 
 .form__input:focus {
-  outline: 2px solid var(--clr-accent-500);
+  border: 1px solid var(--clr-accent-500);
+}
+
+.form__input:focus-visible {
+  outline: 1px solid var(--clr-accent-500);
 }
 
 .form__submit {
@@ -197,6 +264,11 @@ footer a {
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary-600);
   font-weight: var(--fw-600);
+}
+
+.form__submit:is(:hover, :focus-visible) {
+  background-color: var(--clr-primary-650);
+  cursor: pointer;
 }
 
 .form__terms {
