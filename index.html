@@ -26,6 +26,7 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script defer src="./script.js"></script>
     <title>Frontend Mentor | Intro component with sign up form</title>
   </head>
   <body>
@@ -50,38 +51,70 @@
           <p class="form__form-field">
             <label class="visually-hidden" for="first-name">First name</label>
             <input
+              name="first-name"
               class="form__input"
               type="text"
               id="first-name"
               placeholder="First Name"
             />
+            <img
+              class="form__input-error-icon hidden"
+              src="./images/icon-error.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="form__input-error-msg"></span>
           </p>
-          <p>
+          <p class="form__form-field">
             <label class="visually-hidden" for="last-name">Last name</label>
             <input
+              name="last-name"
               class="form__input"
               type="text"
               id="last-name"
               placeholder="Last Name"
             />
+            <img
+              class="form__input-error-icon hidden"
+              src="./images/icon-error.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="form__input-error-msg"></span>
           </p>
-          <p>
+          <p class="form__form-field">
             <label class="visually-hidden" for="email">Email address</label>
             <input
+              name="email"
               class="form__input"
-              type="email"
+              type="text"
               id="email"
               placeholder="Email Address"
             />
+            <img
+              class="form__input-error-icon hidden"
+              src="./images/icon-error.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="form__input-error-msg"></span>
           </p>
-          <p>
+          <p class="form__form-field">
             <label class="visually-hidden" for="password">Password</label>
             <input
+              name="password"
               class="form__input"
               type="password"
               id="password"
               placeholder="Password"
             />
+            <img
+              class="form__input-error-icon hidden"
+              src="./images/icon-error.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <span class="form__input-error-msg"></span>
           </p>
 
           <input
