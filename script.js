@@ -7,6 +7,8 @@ const $firstName = $('#first-name');
 const $lastName = $('#last-name');
 const $email = $('#email');
 const $password = $('#password');
+const $modal = $('.modal');
+const $closeModal = $('#close-modal');
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;
@@ -64,8 +66,34 @@ const validateForm = () => {
 $form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!validateForm()) return;
+  modal.showModal();
   $firstName.value = '';
   $lastName.value = '';
   $email.value = '';
   $password.value = '';
+});
+
+$modal.addEventListener('click', (e) => {
+  if (e.target.nodeName != 'DIALOG') return;
+  $modal.setAttribute('closing', '');
+  $modal.addEventListener(
+    'animationend',
+    () => {
+      $modal.removeAttribute('closing');
+      $modal.close();
+    },
+    { once: true }
+  );
+});
+
+$closeModal.addEventListener('click', () => {
+  $modal.setAttribute('closing', '');
+  $modal.addEventListener(
+    'animationend',
+    () => {
+      $modal.removeAttribute('closing');
+      $modal.close();
+    },
+    { once: true }
+  );
 });
